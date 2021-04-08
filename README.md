@@ -15,7 +15,8 @@
 
 _______
 
-## Uso de minikube, kubeflow y kale para construcción de un pipeline de procesamiento de forma automática y experimentación del paquete construído por cada equipo en la práctica 1 para resolver problemas de optimización convexa.
+**Objetivo:**
+## Uso de minikube, kubeflow y kale para construcción de un pipeline de procesamiento de forma automática y experimentación del paquete desarrollado para resolver problemas de optimización convexa.
 _______
 
 **Equipo 5.**
