@@ -15,25 +15,25 @@
 
 _______
 
-## Uso de minikube, kubeflow y kale para construcción de un pipeline de procesamiento de forma automática y experimentación del paquete 
-## construído por cada equipo en la práctica 1 para resolver problemas de optimización convexa.
-______
+## Uso de minikube, kubeflow y kale para construcción de un pipeline de procesamiento de forma automática y experimentación del paquete construído por cada equipo en la práctica 1 para resolver problemas de optimización convexa.
+_______
 
 **Equipo 5.**
 
 
 | Github User | Actividad a realizar |
 |:---:|:---|
-| @ZarCorvus | Infraestructura en AWS minikube, kale y kubeflow; experimentación y reportes de errores. |
-| @ZarCorvus | Reimplementación del paquete (posibles errores en experimentación) y apoyo tarea 3. |
-| @Carlosrlpzi | Reimplementación del paquete (posibles errores en experimentación) y apoyo tarea 3. |
-| @lobolc | Construcción de Pipelines de procesamiento en Kale (de forma automática de nuestro paquete). |
-| @lgarayva | _Project Manager_. Experimentación con nuestro paquete de Optimización Convexa y reporte de errores. |
+| @ZarCorvus | T1. Infraest. en AWS (minikube, kale y kubeflow); experimentación; reportes de errores; apoyo a T2 y T3. |
+| @Carlosrlpzi | T2. Programacion/reimplementación del paquete; apoyo T3 y reporte. |
+| @lobolc | T3. Construcción de _pipelines_ de procesamiento en **_Kale_** (de forma automática de nuestro paquete). |
+| @lgarayva | T4. _Project Manager_. Experimentación con paquete; reporte de errores; apoyo T2 y T3. |
+
+_______
+
+**Fecha de Entrega:** Sábado 01 de Mayo del 2021, 23:59 hrs. 
 
 
-______
-
-Tentativente se está evaluando la posibildiad de cambiar a un método numérico más ah-hoc a la implementación de Cómputo en Paralelo.
+Tentativente se está evaluando la posibildiad de cambiar a un método numérico más ad-hoc a la implementación de Cómputo en Paralelo.
 
 ______
 
@@ -45,7 +45,8 @@ ______
 
 Puedes visitar nuestro sitio para conocer la documentación del paquete en línea:
 
-[opt_convex]()
+[opt_av_hill_climbing]()
 
 ______
 **Referencias:**
+* [Hill climbing](https://en.wikipedia.org/wiki/Hill_climbing)
