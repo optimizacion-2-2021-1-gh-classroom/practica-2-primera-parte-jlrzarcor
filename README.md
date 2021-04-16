@@ -27,7 +27,7 @@ _______
 | @ZarCorvus | T1. Infraest. en AWS (minikube, kale y kubeflow); experimentación; reportes de errores; apoyo a T2 y T3. |
 | @Carlosrlpzi | T2. Programacion/reimplementación del paquete; apoyo T3 y reporte. |
 | @lobolc | T3. Construcción de _pipelines_ de procesamiento en **_Kale_** (de forma automática de nuestro paquete). |
-| @lgarayva | T4. _Project Manager_. Experimentación con paquete; reporte de errores; apoyo T2 y T3. |
+| @ZarCorvus | T4. _Project Manager_. Experimentación con paquete; reporte de errores; apoyo T2 y T3. |
 
 _______
 
