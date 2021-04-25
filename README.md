@@ -51,3 +51,4 @@ Puedes visitar nuestro sitio para conocer la documentación del paquete en líne
 ______
 **Referencias:**
 * [Hill climbing](https://en.wikipedia.org/wiki/Hill_climbing)
+* [Logistic regression with conjugate gradient descent for document classification](https://krex.k-state.edu/dspace/handle/2097/32658)
