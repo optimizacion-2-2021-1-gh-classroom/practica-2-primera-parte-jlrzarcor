@@ -59,8 +59,8 @@ RUN jupyter notebook --generate-config && sed -i "s/#c.NotebookApp.password = .*
 
 VOLUME ["/shared_volume"]
 WORKDIR /
-ENV NB_PREFIX hillclimbing  
+ENV NB_PREFIX  Opt_HC_CG
 
-ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--LabApp.allow_origin='*'", "--LabApp.base_url=hillclimbing"]
+ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--LabApp.allow_origin='*'", "--LabApp.base_url="Opt_HC_CG"]
 
 
