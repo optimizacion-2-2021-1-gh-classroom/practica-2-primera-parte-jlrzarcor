@@ -12,8 +12,8 @@ Install package with:
 
    #execute next line being in `src` dir where `setup.py` file is 
    #after cloning repo:
-   #https://github.com/palmoreck/example-python-package-and-sphinx-doc
-   pip install Opt_HC_CG
+   #https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-jlrzarcor
+   pip install .
 
 or in editable mode:
 
@@ -21,8 +21,8 @@ or in editable mode:
 
    #execute next line being in `src` dir where `setup.py` file is 
    #after cloning repo:
-   #https://github.com/palmoreck/example-python-package-and-sphinx-doc
-   pip install -e Opt_HC_CG
+   #https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-jlrzarcor
+   pip install -e .
 
 or with url:
 
