@@ -4,8 +4,8 @@
 Functions
 *********
       
-Print table module
-==================
+Hill Climbing and Conjugate Gradient module
+===========================================
 
 .. autosummary::
    :toctree: _autosummary
