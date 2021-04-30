@@ -40,13 +40,12 @@ def random_solution(points):
     temp_solution.append(temp_solution[0])
     return temp_solution
 
-def calculate_distance(points):
+def calculate_distance(points, random_sol):
     """
     returns the distance associated with a solution
     input:
         points:
     """
-    random_sol = random_solution(points)
     matrix = distance_matrix(points)
     distance = 0
     for i in range(len(random_sol)):
@@ -54,25 +53,31 @@ def calculate_distance(points):
     return distance
 
 
-def other_solutionts(points, num_solution, best_sol):
-    number_points = points.shape[0]
-    pos_sol = [best_sol]
-    for i in range(num_solution - 1):
-        temp_sol = random_solution(points)
+def other_solution(points, pos_sol):
+    temp_sol = random_solution(points)
 
-        if temp_sol not in pos_sol:
-            pos_sol.append(temp_sol)
+    if temp_sol in pos_sol:
+        temp_sol = other_solution(points, pos_sol)
+    else:
+        temp_sol        
+    return temp_sol
 
-    return pos_sol
-
-def best_solution(points, num_solution):
+def best_solution(points):
     best_sol = random_solution(points)
-    distance = calculate_distance(points)
-    best_distance = distance
-    solutions = other_solutionts(points, num_solution, best_sol)
-    for pos_sol in solutions:
-        pos_dist = calculate_distance(points)
-        if best_distance > pos_dist:
-            best_distance = pos_dist
-            best_sol = pos_sol
+    best_distance = calculate_distance(points, best_sol)
+    pos_sol = [best_sol]
+    solution = other_solution(points, pos_sol)
+    pos_sol.append(solution)
+    distance  = calculate_distance(points, solution)
+    print(best_distance, distance)
+    # el problema es compara dos distancias, la primera seraia dsitancia 
+    while abs(distance - best_distance) > 10**-7:
+        if best_distance > distance:
+            best_distance = distance
+            best_sol = solution
+        solution = other_solution(points, pos_sol)
+        pos_sol.append(solution)
+        distance  = calculate_distance(points, solution)
+        print(best_distance, distance)
+
     return best_distance, best_sol
