@@ -42,7 +42,8 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 #Nuestro paquete
-RUN pip3 install oae5
+
+RUN pip3 install Opt-HC-CG 
 
 #COPY . /tmp/
 #COPY --from=intermediate ./practica-1-segunda-parte-jlrzarcor/requirements.txt requirements.txt
