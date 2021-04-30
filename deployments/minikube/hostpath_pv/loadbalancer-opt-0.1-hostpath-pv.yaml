@@ -12,17 +12,3 @@ spec:
                   nodePort: 30001 #select port of your preference
         selector:
                 app: jupyterlab-opt-0-1-hostpath-pv-app
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-
-
