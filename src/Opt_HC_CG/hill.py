@@ -23,7 +23,7 @@ def distance_matrix(points):
             matrix.append(p)
     return np.reshape(matrix, (len(coordinates), len(coordinates)))
 
-def random_solution(points):
+def random_solution(points, initial_point = 0):
     """
     create a random solution with the places to be visited
     input:
@@ -33,8 +33,9 @@ def random_solution(points):
     """
     number_points = len_points(points)
     points_order = list(range(0, number_points))
-    temp_solution = []
-    for i in range(number_points):
+    points_order.remove(initial_point)
+    temp_solution = [initial_point]
+    for i in range(number_points-1):
         random_point = np.random.choice(points_order)
         temp_solution.append(random_point)
         points_order.remove(random_point)
@@ -54,32 +55,33 @@ def calculate_distance(points, random_sol):
     return distance
 
 
-def other_solution(points, pos_sol):
-    temp_sol = random_solution(points)
+def other_solution(points, pos_sol, initial_point):
+    temp_sol = random_solution(points, initial_point)
 
     if temp_sol in pos_sol:
-        temp_sol = other_solution(points, pos_sol)
+        temp_sol = other_solution(points, pos_sol, initial_point)
     else:
         temp_sol        
     return temp_sol
 
-def best_solution(points, cp=1e-7):
+
+def best_solution(points, initial_point, cp=1e-7):
     start_time = time.time()
-    best_sol = random_solution(points)
+    best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
     pos_sol = [best_sol]
-    solution = other_solution(points, pos_sol)
+    solution = other_solution(points, pos_sol, initial_point)
     pos_sol.append(solution)
     distance  = calculate_distance(points, solution)
     print(best_distance, distance)
     # el problema es compara dos distancias, la primera seraia dsitancia 
     while abs(distance - best_distance) > cp:
+        print(best_distance, distance)
         if best_distance > distance:
             best_distance = distance
             best_sol = solution
-        solution = other_solution(points, pos_sol)
+        solution = other_solution(points, pos_sol, initial_point)
         pos_sol.append(solution)
         distance  = calculate_distance(points, solution)
-        print(best_distance, distance)
-
-    return best_distance, best_sol, pos_sol, time.time() - start_time
+        
+    return best_distance, best_sol, pos_sol
