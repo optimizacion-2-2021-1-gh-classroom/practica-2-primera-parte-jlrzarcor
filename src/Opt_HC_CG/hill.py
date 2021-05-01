@@ -73,8 +73,6 @@ def best_solution(points, initial_point = 0, tolerance=1e-7):
     solution = other_solution(points, pos_sol, initial_point)
     pos_sol.append(solution)
     distance  = calculate_distance(points, solution)
-    print(best_distance, distance)
-    # el problema es compara dos distancias, la primera seraia dsitancia 
     while abs(distance - best_distance) > tolerance:
         print(best_distance, distance)
         if best_distance > distance:
