@@ -1,3 +1,4 @@
+#dummy line
 #dummy line to trigger build
 FROM ubuntu:bionic
 USER root
