@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.hill.distance\_matrix
+=================================
+
+.. currentmodule:: Opt_HC_CG.hill
+
+.. autofunction:: distance_matrix

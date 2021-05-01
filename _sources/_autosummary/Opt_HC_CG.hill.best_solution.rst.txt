@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.hill.best\_solution
+===============================
+
+.. currentmodule:: Opt_HC_CG.hill
+
+.. autofunction:: best_solution

@@ -14,7 +14,6 @@ Welcome to "Opt_HC_CG"'s documentation!
 
    installation
    functions_autosummary
-   #integration/modules_autosummary
 
 
 Indices and tables
