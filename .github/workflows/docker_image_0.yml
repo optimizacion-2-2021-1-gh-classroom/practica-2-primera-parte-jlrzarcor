@@ -38,4 +38,4 @@ jobs:
           file: dockerfiles/pkg_0/Dockerfile #path in repo to Dockerfile
           platforms: linux/amd64
           push: true
-          tags: lobolc/equipo5:v3 
+          tags: lobolc/pkg_0:0.1  
