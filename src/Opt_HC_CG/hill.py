@@ -63,7 +63,7 @@ def other_solution(points, pos_sol):
         temp_sol        
     return temp_sol
 
-def best_solution(points, cp):
+def best_solution(points, cp=1e-7):
     start_time = time.time()
     best_sol = random_solution(points)
     best_distance = calculate_distance(points, best_sol)

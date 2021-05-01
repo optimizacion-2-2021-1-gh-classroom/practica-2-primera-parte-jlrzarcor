@@ -3,7 +3,7 @@ import scipy
 from   sklearn import preprocessing
 
 
-def cgm(A,b,x,cp, iter):
+def cgm(A,b,x,cp=1e-7, iter=10):
     """
     input:
             A: Coeficient matrix
