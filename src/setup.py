@@ -12,7 +12,7 @@ setup(
   keywords = ['Hill Climbing', 'TSP', 'conjugate gradiant'],  # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'numpy',
-          'pandas'
+          'pandas',
           'sklearn',
       ],
   classifiers=[
