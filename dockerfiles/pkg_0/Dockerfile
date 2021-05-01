@@ -8,7 +8,7 @@ ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive 
 ENV DEB_BUILD_DEPS="sudo nano less git wget curl python3-dev python3-pip python3-setuptools"
 ENV DEB_PACKAGES=""
-ENV PIP_PACKAGES_COMMON="scipy cvxpy scikit-learn"
+ENV PIP_PACKAGES_COMMON="scipy cvxpy sklearn"
 #ENV PIP_PACKAGES_KALE="kubeflow-kale==0.6.1"
 
 RUN apt-get update && export $DEBIAN_FRONTEND && \
