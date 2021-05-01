@@ -1,3 +1,4 @@
+#dummy line
 name: method test
 on:
   [push]
