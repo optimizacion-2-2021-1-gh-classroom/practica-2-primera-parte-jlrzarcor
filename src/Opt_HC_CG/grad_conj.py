@@ -3,7 +3,7 @@ import scipy
 from   sklearn import preprocessing
 
 
-def cgm(A,b,x,cp=1e-7, iter=10):
+def cgm(A,b,x,tolerance=1e-7, iter=1000):
     """
     input:
             A: Coeficient matrix
@@ -29,7 +29,7 @@ def cgm(A,b,x,cp=1e-7, iter=10):
         p = -r + beta*p
         
         k =+ 1
-        if np.linalg.norm(r) < cp:
+        if np.linalg.norm(r) < tolerance:
             break
         if k > iter:
             break    
