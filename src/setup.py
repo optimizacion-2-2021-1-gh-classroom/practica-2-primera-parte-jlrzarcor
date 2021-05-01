@@ -9,7 +9,7 @@ setup(
   author_email = 'carlosrlpzi@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/Carlosrlpzi/Opt_HC_CG',   # Provide either the link to your github or to your website
   download_url = 'https://github.com/Carlosrlpzi/Opt_HC_CG/archive/refs/tags/0.3.tar.gz',    # I explain this later on
-  keywords = ['Hill Climbing', 'TSP', conjugate gradiant],  # Keywords that define your package best
+  keywords = ['Hill Climbing', 'TSP', 'conjugate gradiant'],  # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'numpy',
           'pandas',
