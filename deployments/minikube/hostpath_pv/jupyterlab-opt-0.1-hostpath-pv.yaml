@@ -16,7 +16,7 @@ spec:
                         containers: 
                         - name: jupyterlab-opt-0-1-hostpath-pv
                           imagePullPolicy: Always
-                          image: lobolc/equipo5:v3
+                          image: lobolc/pkg:0.1
                           ports:
                                   - containerPort: 8888
                           env:
