@@ -3,7 +3,7 @@ import scipy
 from   sklearn import preprocessing
 
 
-def cgm(A,b,x):
+def cgm(A,b,x,cp, iter):
     """
     input:
             A: Coeficient matrix
@@ -28,10 +28,10 @@ def cgm(A,b,x):
         
         p = -r + beta*p
         
-        k = k+1
-        if np.linalg.norm(r) < 1e-10:
+        k =+ 1
+        if np.linalg.norm(r) < cp:
             break
-        if k > 10:
+        if k > iter:
             break    
     return x
 
@@ -45,10 +45,10 @@ def its_simetric_o(matrix, order):
     outputs:
         True ir our matrix is simetric, false otherwise
     """
-    simetrica = True
-    for i in range(orden):
-        for j in range(orden):
-            if (matriz[i][j] != matriz[j][i]):
+    simetric = True
+    for i in range(order):
+        for j in range(order):
+            if (matrix[i][j] != matrix[j][i]):
                 simetric = False
     return simetric
 

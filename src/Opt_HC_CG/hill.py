@@ -1,3 +1,4 @@
+import time 
 import numpy as np
 import pandas as pd
 
@@ -62,7 +63,8 @@ def other_solution(points, pos_sol):
         temp_sol        
     return temp_sol
 
-def best_solution(points):
+def best_solution(points, cp):
+    start_time = time.time()
     best_sol = random_solution(points)
     best_distance = calculate_distance(points, best_sol)
     pos_sol = [best_sol]
@@ -71,7 +73,7 @@ def best_solution(points):
     distance  = calculate_distance(points, solution)
     print(best_distance, distance)
     # el problema es compara dos distancias, la primera seraia dsitancia 
-    while abs(distance - best_distance) > 10**-7:
+    while abs(distance - best_distance) > cp:
         if best_distance > distance:
             best_distance = distance
             best_sol = solution
@@ -80,4 +82,4 @@ def best_solution(points):
         distance  = calculate_distance(points, solution)
         print(best_distance, distance)
 
-    return best_distance, best_sol
+    return best_distance, best_sol, pos_sol, time.time() - start_time
