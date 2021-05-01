@@ -23,7 +23,7 @@ def distance_matrix(points):
             matrix.append(p)
     return np.reshape(matrix, (len(coordinates), len(coordinates)))
 
-def random_solution(points, initial_point = 0):
+def random_solution(points, initial_point):
     """
     create a random solution with the places to be visited
     input:
@@ -65,7 +65,7 @@ def other_solution(points, pos_sol, initial_point):
     return temp_sol
 
 
-def best_solution(points, initial_point, cp=1e-7):
+def best_solution(points, initial_point = 0, tolerance=1e-7):
     start_time = time.time()
     best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
@@ -75,7 +75,7 @@ def best_solution(points, initial_point, cp=1e-7):
     distance  = calculate_distance(points, solution)
     print(best_distance, distance)
     # el problema es compara dos distancias, la primera seraia dsitancia 
-    while abs(distance - best_distance) > cp:
+    while abs(distance - best_distance) > tolerance:
         print(best_distance, distance)
         if best_distance > distance:
             best_distance = distance
