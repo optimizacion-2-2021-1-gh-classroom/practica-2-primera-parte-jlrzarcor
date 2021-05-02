@@ -27,9 +27,10 @@ def random_solution(points, initial_point):
     """
     create a random solution with the places to be visited
     input:
-        points: array with the places for visiting
+        points[array]: coordinates of the places to be visited
+        initial_point[integer]: number of the place to be visited first
     output:
-        array: input randomly rearrange
+        temp_solution[list]: creates random solution
     """
     number_points = len_points(points)
     points_order = list(range(0, number_points))
@@ -44,9 +45,12 @@ def random_solution(points, initial_point):
 
 def calculate_distance(points, random_sol):
     """
-    returns the distance associated with a solution
-    input:
-        points:
+    returns the distance associated with a proposed solution
+        input:
+            points[array]: coordinates of the places to be visited
+            random_sol[list]: a random route solution
+        output:
+            distance[float]: the distance cover by the proposed random solution
     """
     matrix = distance_matrix(points)
     distance = 0
@@ -56,6 +60,15 @@ def calculate_distance(points, random_sol):
 
 
 def other_solution(points, pos_sol, initial_point):
+    """
+    creates route solutions not visited before
+        input:
+            points[array]: coordinates of the places to be visited
+            pos_sol[list]: list of posible solution routes
+            initial_point[integer]: number of the place to be visited first
+        output:
+            temp_sol[list]: a new route solution for visiting  
+    """
     temp_sol = random_solution(points, initial_point)
 
     if temp_sol in pos_sol:
@@ -66,6 +79,17 @@ def other_solution(points, pos_sol, initial_point):
 
 
 def best_solution(points, initial_point = 0, tolerance=1e-7):
+    """
+    finds an optimal solution for the TSP problem using hill climbing algorithm
+        input:
+            points: coordinates of the places to be visited 
+            initial_point[integer]: number of the place to be visited first
+            tolerance[float]: value that indicates the solution is not improving
+        outputs:
+            bst_distance[float]: distance of the best route 
+            best_sol[list]: order the places to be visted in the optimal solution
+            pos_sol[list]: list of the routes that were tested    
+    """
     start_time = time.time()
     best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
