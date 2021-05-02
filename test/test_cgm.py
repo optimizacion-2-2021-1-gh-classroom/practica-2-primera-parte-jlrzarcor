@@ -4,7 +4,7 @@ import os
 
 os.chdir("../")
 
-import src.Opt_HC_CH.grad_conj as opt 
+import src.Opt_HC_CG.grad_conj as opt 
 
 a = np.array([[3, 2, -1], [2, -1, 1], [-1, 1, -1]])
 b = np.array([1, -2, 0])
