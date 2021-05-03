@@ -21,6 +21,6 @@ permutation, distance = solve_tsp_dynamic_programming(distance_matrix)
 
 
 def test_distance():
-    dist_opt = opt.best_solution(sources)
+    dist_opt,b,c = opt.best_solution(sources)
     assert np.linalg.norm(distance - dist_opt) < 1e-3  
     
