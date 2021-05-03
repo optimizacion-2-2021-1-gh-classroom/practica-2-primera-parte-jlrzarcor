@@ -2,4 +2,4 @@ scipy
 cvxpy
 sklearn
 pytest
-python-tsp
+python-tsp==0.2.0
