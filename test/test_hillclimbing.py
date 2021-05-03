@@ -4,7 +4,7 @@ import os
 
 os.chdir("../")
 
-import src.Opt_HC_CG.hill as opt
+from src.Opt_HC_CG.hill import best_solution
 
 from python_tsp.distances import great_circle_distance_matrix
 from python_tsp.exact import solve_tsp_dynamic_programming
@@ -20,6 +20,6 @@ permutation, distance = solve_tsp_dynamic_programming(distance_matrix)
 
 
 def test_distance():
-    dist_opt = opt.best_solution(sources)
+    dist_opt = best_solution(sources)
     assert np.linalg.norm(distance - dist_opt) < 1e-3  
     
