@@ -3,3 +3,4 @@ cvxpy
 sklearn
 pytest
 python-tsp==0.2.0
+pandas
