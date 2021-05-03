@@ -1,5 +1,5 @@
 scipy
 cvxpy
-scikit-learn
+sklearn
 pytest
 python-tsp
