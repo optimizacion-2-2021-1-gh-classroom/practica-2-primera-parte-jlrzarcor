@@ -1,14 +1,29 @@
 import time 
 import numpy as np
 import pandas as pd
+from math import radians, degrees, sin, cos, asin, acos, sqrt
 
+
+def great_circle(lon1, lat1, lon2, lat2):
+    """
+    calculate the great circle distance of the coordinates points
+        input:
+            [float]the latitudes and longitudes to calculate the
+            distance between two cordinates
+        output:
+            [float] distance between two cordinates
+    """
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])    
+    
+    return 6371 * (
+        acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(lon1 - lon2)))
 
 def len_points(points):
     return points.shape[0]
 
 def distance_matrix(points):
     """
-    calculate the distance among each suggest solution points
+    calculate the distance among each suggest solution point
 
     input:
         points: array containig the points to be visited
@@ -52,32 +67,49 @@ def calculate_distance(points, random_sol):
         output:
             distance[float]: the distance cover by the proposed random solution
     """
-    matrix = distance_matrix(points)
     distance = 0
     for i in range(len(random_sol)):
-        distance += matrix[random_sol[i]][random_sol[i - 1]]
+        distance += great_circle(points[random_sol[i]][0], points[random_sol[i]][1], points[random_sol[i-1]][0], points[random_sol[i-1]][1])
     return distance
 
-
-def other_solution(points, pos_sol, initial_point):
+def getNeighbours(solution):
     """
-    creates route solutions not visited before
+    generate neighbouring solutions to the current solution
         input:
-            points[array]: coordinates of the places to be visited
-            pos_sol[list]: list of posible solution routes
-            initial_point[integer]: number of the place to be visited first
+            solution[list]: current solution
         output:
-            temp_sol[list]: a new route solution for visiting  
+            neighbours: list containing neighbouring solutions
+
     """
-    temp_sol = random_solution(points, initial_point)
+    neighbours = []
+    for i in range(len(solution)):
+        for j in range(i + 1, len(solution)):
+            neighbour = solution.copy()
+            neighbour[i] = solution[j]
+            neighbour[j] = solution[i]
+            neighbours.append(neighbour)
+    return neighbours
 
-    if temp_sol in pos_sol:
-        temp_sol = other_solution(points, pos_sol, initial_point)
-    else:
-        temp_sol        
-    return temp_sol
+def getBestNeighbour(points, neighbours):
+    """
+    finds the best neighbour from a list of neighbours
+        input:
+            points[list]: coordinates of the places to be visited
+            neighbours[list]: contains the neighbours of the current solution 
+        output:
+            bestNeighbour[list]: the nearest neighbiur if the current solution 
+            bestRouteLength[float]: the distance cover in the bestNeighbour route  
+    """
+    bestRouteLength = calculate_distance(points, neighbours[0])
+    bestNeighbour = neighbours[0]
+    for neighbour in neighbours:
+        currentRouteLength = calculate_distance(points, neighbour)
+        if currentRouteLength < bestRouteLength:
+            bestRouteLength = currentRouteLength
+            bestNeighbour = neighbour
+    return bestNeighbour, bestRouteLength
 
-
+    
 def best_solution(points, initial_point = 0, tolerance=1e-7):
     """
     finds an optimal solution for the TSP problem using hill climbing algorithm
@@ -93,16 +125,19 @@ def best_solution(points, initial_point = 0, tolerance=1e-7):
     start_time = time.time()
     best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
-    pos_sol = [best_sol]
-    solution = other_solution(points, pos_sol, initial_point)
-    pos_sol.append(solution)
-    distance  = calculate_distance(points, solution)
-    while abs(distance - best_distance) > tolerance:
-        if best_distance > distance:
-            best_distance = distance
-            best_sol = solution
-        solution = other_solution(points, pos_sol, initial_point)
-        pos_sol.append(solution)
-        distance  = calculate_distance(points, solution)
+    neighbours = getNeighbours(best_sol)
+    bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
+    #pos_sol = [best_sol]
+    #solution = other_solution(points, pos_sol, initial_point)
+    #pos_sol.append(solution)
+    #distance  = calculate_distance(points, solution)
+    while abs(bestNeighbourRouteLength - best_distance) > tolerance:
+        if best_distance > bestNeighbourRouteLength:
+            best_distance = bestNeighbourRouteLength
+            best_sol = bestNeighbour
+        #solution = other_solution(points, pos_sol, initial_point)
+        #pos_sol.append(solution)
+        neighbours = getNeighbours(best_sol)
+        bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
         
-    return best_distance, best_sol, pos_sol
+    return best_distance, best_sol, time.time() - start_time
