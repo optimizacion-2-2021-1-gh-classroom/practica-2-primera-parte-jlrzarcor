@@ -2,3 +2,4 @@ scipy
 cvxpy
 scikit-learn
 pytest
+python-tsp
