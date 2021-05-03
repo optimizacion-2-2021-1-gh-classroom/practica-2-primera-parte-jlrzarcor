@@ -15,8 +15,8 @@ def great_circle(lon1, lat1, lon2, lat2):
     """
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])    
     
-    return 6371 * (
-        acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(lon1 - lon2)))
+    return 6371000 * (
+        acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(abs(lon1 - lon2))))
 
 def len_points(points):
     return points.shape[0]
@@ -38,38 +38,50 @@ def distance_matrix(points):
             matrix.append(p)
     return np.reshape(matrix, (len(coordinates), len(coordinates)))
 
-def random_solution(points, initial_point):
-    """
-    create a random solution with the places to be visited
-    input:
-        points[array]: coordinates of the places to be visited
-        initial_point[integer]: number of the place to be visited first
-    output:
-        temp_solution[list]: creates random solution
-    """
-    number_points = len_points(points)
-    points_order = list(range(0, number_points))
-    points_order.remove(initial_point)
-    temp_solution = [initial_point]
-    for i in range(number_points-1):
-        random_point = np.random.choice(points_order)
-        temp_solution.append(random_point)
-        points_order.remove(random_point)
-    temp_solution.append(temp_solution[0])
-    return temp_solution
+#def random_solution(points, initial_point):
+#    """
+#    create a random solution with the places to be visited
+#    input:
+#        points[array]: coordinates of the places to be visited
+#        initial_point[integer]: number of the place to be visited first
+#    output:
+#        temp_solution[list]: creates random solution
+#    """
+#    number_points = len_points(points)
+#    points_order = list(range(0, number_points))
+#    points_order.remove(initial_point)
+#    temp_solution = [initial_point]
+#    for i in range(number_points-1):
+#        random_point = np.random.choice(points_order)
+#        temp_solution.append(random_point)
+#        points_order.remove(random_point)
+#   temp_solution.append(temp_solution[0])
+#   return temp_solution
+    
+def randomSolution(tsp, initial_point):
+    cities = list(range(len(tsp)))
+    solution = [initial_point]
+    cities.remove(initial_point)
+
+    for i in range(len(cities)):
+        #randomCity = cities[np.random.randint(0, len(cities)-1)]
+        randomCity = np.random.choice(cities)
+        solution.append(randomCity)
+        cities.remove(randomCity)
+    solution.append(solution[0])
+
+    return solution
 
 def calculate_distance(points, random_sol):
     """
-    returns the distance associated with a proposed solution
-        input:
-            points[array]: coordinates of the places to be visited
-            random_sol[list]: a random route solution
-        output:
-            distance[float]: the distance cover by the proposed random solution
+    returns the distance associated with a solution
+    input:
+        points:
     """
+    matrix = distance_matrix(points)
     distance = 0
     for i in range(len(random_sol)):
-        distance += great_circle(points[random_sol[i]][0], points[random_sol[i]][1], points[random_sol[i-1]][0], points[random_sol[i-1]][1])
+        distance += matrix[random_sol[i]][random_sol[i - 1]]
     return distance
 
 def getNeighbours(solution):
@@ -110,7 +122,7 @@ def getBestNeighbour(points, neighbours):
     return bestNeighbour, bestRouteLength
 
     
-def best_solution(points, initial_point = 0, tolerance=1e-7):
+def best_solution(points, initial_point = 1, tolerance=1e-7):
     """
     finds an optimal solution for the TSP problem using hill climbing algorithm
         input:
@@ -123,7 +135,7 @@ def best_solution(points, initial_point = 0, tolerance=1e-7):
             pos_sol[list]: list of the routes that were tested    
     """
     start_time = time.time()
-    best_sol = random_solution(points, initial_point)
+    best_sol = randomSolution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
     neighbours = getNeighbours(best_sol)
     bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
