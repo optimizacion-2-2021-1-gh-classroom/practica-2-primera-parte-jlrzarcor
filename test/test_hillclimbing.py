@@ -6,7 +6,7 @@ from python_tsp.exact import solve_tsp_dynamic_programming
 
 os.chdir("../")
 
-import src.Opt_HC_CG.best_solution as opt 
+import src.Opt_HC_CG.hill as opt 
 
 
 sources = np.array([
