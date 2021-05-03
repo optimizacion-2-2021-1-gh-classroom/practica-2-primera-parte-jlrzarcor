@@ -38,39 +38,39 @@ def distance_matrix(points):
             matrix.append(p)
     return np.reshape(matrix, (len(coordinates), len(coordinates)))
 
-#def random_solution(points, initial_point):
-#    """
-#    create a random solution with the places to be visited
-#    input:
-#        points[array]: coordinates of the places to be visited
-#        initial_point[integer]: number of the place to be visited first
-#    output:
-#        temp_solution[list]: creates random solution
-#    """
-#    number_points = len_points(points)
-#    points_order = list(range(0, number_points))
-#    points_order.remove(initial_point)
-#    temp_solution = [initial_point]
-#    for i in range(number_points-1):
-#        random_point = np.random.choice(points_order)
-#        temp_solution.append(random_point)
-#        points_order.remove(random_point)
-#   temp_solution.append(temp_solution[0])
-#   return temp_solution
+def random_solution(points, initial_point):
+    """
+    create a random solution with the places to be visited
+    input:
+        points[array]: coordinates of the places to be visited
+        initial_point[integer]: number of the place to be visited first
+    output:
+        temp_solution[list]: creates random solution
+    """
+    number_points = len_points(points)
+    points_order = list(range(0, number_points))
+    points_order.remove(initial_point)
+    temp_solution = [initial_point]
+    for i in range(number_points-1):
+        random_point = np.random.choice(points_order)
+        temp_solution.append(random_point)
+        points_order.remove(random_point)
+   temp_solution.append(temp_solution[0])
+   return temp_solution
     
-def randomSolution(tsp, initial_point):
-    cities = list(range(len(tsp)))
-    solution = [initial_point]
-    cities.remove(initial_point)
+#def randomSolution(tsp, initial_point):
+#    cities = list(range(len(tsp)))
+#    solution = [initial_point]
+#    cities.remove(initial_point)
+#
+#    for i in range(len(cities)):
+#        #randomCity = cities[np.random.randint(0, len(cities)-1)]
+#        randomCity = np.random.choice(cities)
+#        solution.append(randomCity)
+#        cities.remove(randomCity)
+#    solution.append(solution[0])
 
-    for i in range(len(cities)):
-        #randomCity = cities[np.random.randint(0, len(cities)-1)]
-        randomCity = np.random.choice(cities)
-        solution.append(randomCity)
-        cities.remove(randomCity)
-    solution.append(solution[0])
-
-    return solution
+#    return solution
 
 def calculate_distance(points, random_sol):
     """
@@ -135,7 +135,7 @@ def best_solution(points, initial_point = 1, tolerance=1e-7):
             pos_sol[list]: list of the routes that were tested    
     """
     start_time = time.time()
-    best_sol = randomSolution(points, initial_point)
+    best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
     neighbours = getNeighbours(best_sol)
     bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
