@@ -55,8 +55,8 @@ def random_solution(points, initial_point):
         random_point = np.random.choice(points_order)
         temp_solution.append(random_point)
         points_order.remove(random_point)
-   temp_solution.append(temp_solution[0])
-   return temp_solution
+    temp_solution.append(temp_solution[0])
+    return temp_solution
     
 #def randomSolution(tsp, initial_point):
 #    cities = list(range(len(tsp)))
