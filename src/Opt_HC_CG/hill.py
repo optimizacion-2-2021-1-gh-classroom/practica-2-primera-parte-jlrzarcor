@@ -58,25 +58,12 @@ def random_solution(points, initial_point):
     temp_solution.append(temp_solution[0])
     return temp_solution
     
-#def randomSolution(tsp, initial_point):
-#    cities = list(range(len(tsp)))
-#    solution = [initial_point]
-#    cities.remove(initial_point)
-#
-#    for i in range(len(cities)):
-#        #randomCity = cities[np.random.randint(0, len(cities)-1)]
-#        randomCity = np.random.choice(cities)
-#        solution.append(randomCity)
-#        cities.remove(randomCity)
-#    solution.append(solution[0])
-
-#    return solution
-
 def calculate_distance(points, random_sol):
     """
     returns the distance associated with a solution
     input:
-        points:
+        points[array]: coordinates of the places to be visited
+        random_sol[list]: contains a random solution proposed
     """
     matrix = distance_matrix(points)
     distance = 0
@@ -84,7 +71,7 @@ def calculate_distance(points, random_sol):
         distance += matrix[random_sol[i]][random_sol[i - 1]]
     return distance
 
-def getNeighbours(solution):
+def get_neighbours(solution):
     """
     generate neighbouring solutions to the current solution
         input:
@@ -102,24 +89,24 @@ def getNeighbours(solution):
             neighbours.append(neighbour)
     return neighbours
 
-def getBestNeighbour(points, neighbours):
+def get_best_neighbour(points, neighbours):
     """
     finds the best neighbour from a list of neighbours
         input:
             points[list]: coordinates of the places to be visited
             neighbours[list]: contains the neighbours of the current solution 
         output:
-            bestNeighbour[list]: the nearest neighbiur if the current solution 
-            bestRouteLength[float]: the distance cover in the bestNeighbour route  
+            best_neighbour[list]: the nearest neighbiur if the current solution 
+            best_route_length[float]: the distance cover in the best_neighbour route  
     """
-    bestRouteLength = calculate_distance(points, neighbours[0])
-    bestNeighbour = neighbours[0]
+    best_route_length = calculate_distance(points, neighbours[0])
+    best_neighbour = neighbours[0]
     for neighbour in neighbours:
-        currentRouteLength = calculate_distance(points, neighbour)
-        if currentRouteLength < bestRouteLength:
-            bestRouteLength = currentRouteLength
-            bestNeighbour = neighbour
-    return bestNeighbour, bestRouteLength
+        current_route_length = calculate_distance(points, neighbour)
+        if current_route_length < best_route_length:
+            best_route_length = current_route_length
+            best_neighbour = neighbour
+    return best_neighbour, best_route_length
 
     
 def best_solution(points, initial_point = 1, tolerance=1e-7):
@@ -137,19 +124,19 @@ def best_solution(points, initial_point = 1, tolerance=1e-7):
     start_time = time.time()
     best_sol = random_solution(points, initial_point)
     best_distance = calculate_distance(points, best_sol)
-    neighbours = getNeighbours(best_sol)
-    bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
+    neighbours = get_neighbours(best_sol)
+    best_neighbour, best_neighbour_route_length = get_best_neighbour(points, neighbours)
     #pos_sol = [best_sol]
     #solution = other_solution(points, pos_sol, initial_point)
     #pos_sol.append(solution)
     #distance  = calculate_distance(points, solution)
-    while abs(bestNeighbourRouteLength - best_distance) > tolerance:
-        if best_distance > bestNeighbourRouteLength:
-            best_distance = bestNeighbourRouteLength
-            best_sol = bestNeighbour
+    while abs(best_neighbour_route_length - best_distance) > tolerance:
+        if best_distance > best_neighbour_route_length:
+            best_distance = best_neighbour_route_length
+            best_sol = best_neighbour
         #solution = other_solution(points, pos_sol, initial_point)
         #pos_sol.append(solution)
-        neighbours = getNeighbours(best_sol)
-        bestNeighbour, bestNeighbourRouteLength = getBestNeighbour(points, neighbours)
+        neighbours = get_neighbours(best_sol)
+        best_neighbour, best_neighbour_route_length = get_best_neighbour(points, neighbours)
         
     return best_distance, best_sol, time.time() - start_time
