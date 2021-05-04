@@ -40,15 +40,16 @@ ______
 
 Para una experiencia interactiva con el código de nuestro repositorio, puedes utilizar el botón [binder](https://mybinder.org/):
 
-[![Binder](https://mybinder.org/badge_logo.svg)]()
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-jlrzarcor/main)
 
 ______
 
 Puedes visitar nuestro sitio para conocer la documentación del paquete en línea:
 
-[paquete_experimental_hill_climbing](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-primera-parte-jlrzarcor/)
+[paquete_experimental_hill_climbing_conjugate_gradient](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-primera-parte-jlrzarcor/)
 
 ______
 **Referencias:**
 * [Hill climbing](https://en.wikipedia.org/wiki/Hill_climbing)
 * [Logistic regression with conjugate gradient descent for document classification](https://krex.k-state.edu/dspace/handle/2097/32658)
+* [Hill climbing towards article](https://towardsdatascience.com/how-to-implement-the-hill-climbing-algorithm-in-python-1c65c29469de)
