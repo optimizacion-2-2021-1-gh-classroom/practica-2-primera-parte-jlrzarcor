@@ -64,6 +64,8 @@ def calculate_distance(points, random_sol):
     input:
         points[array]: coordinates of the places to be visited
         random_sol[list]: contains a random solution proposed
+    output:
+        distance[float]: distance cover by the propose solution
     """
     matrix = distance_matrix(points)
     distance = 0
