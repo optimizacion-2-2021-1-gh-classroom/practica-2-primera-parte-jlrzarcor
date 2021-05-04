@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.hill.neighbors
+==========================
+
+.. currentmodule:: Opt_HC_CG.hill
+
+.. autofunction:: neighbors

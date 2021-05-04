@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opt_HC_CG.hill.distance_matrix &#8212; &#34;Opt_HC_CG&#34; 0.1 documentation</title>
+    <title>Opt_HC_CG.hill.neighbors &#8212; &#34;Opt_HC_CG&#34; 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     
@@ -17,8 +17,8 @@
     <script src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Opt_HC_CG.hill.calculate_distance" href="Opt_HC_CG.hill.calculate_distance.html" />
-    <link rel="prev" title="Functions" href="../functions_autosummary.html" />
+    <link rel="next" title="Opt_HC_CG.hill.best_solution" href="Opt_HC_CG.hill.best_solution.html" />
+    <link rel="prev" title="Opt_HC_CG.hill.calculate_distance" href="Opt_HC_CG.hill.calculate_distance.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -31,14 +31,14 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
+          <a href="Opt_HC_CG.hill.best_solution.html" title="Opt_HC_CG.hill.best_solution"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../functions_autosummary.html" title="Functions"
+          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" accesskey="U">Functions</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.distance_matrix</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.neighbors</a></li> 
       </ul>
     </div>  
 
@@ -47,16 +47,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="opt-hc-cg-hill-distance-matrix">
-<h1>Opt_HC_CG.hill.distance_matrix<a class="headerlink" href="#opt-hc-cg-hill-distance-matrix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="opt-hc-cg-hill-neighbors">
+<h1>Opt_HC_CG.hill.neighbors<a class="headerlink" href="#opt-hc-cg-hill-neighbors" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="Opt_HC_CG.hill.distance_matrix">
-<code class="sig-name descname">distance_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coordinate</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/hill.html#distance_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.hill.distance_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>calculate the distance among each suggest solution point</p>
-<dl class="simple">
-<dt>input:</dt><dd><p>coordinate[array]: array containig the points to be visited</p>
+<dt id="Opt_HC_CG.hill.neighbors">
+<code class="sig-name descname">neighbors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrix</span></em>, <em class="sig-param"><span class="n">solution</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/hill.html#neighbors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.hill.neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>create neighbors of a propose solution</dt><dd><dl class="simple">
+<dt>input:</dt><dd><p>matrix[array]: distance between points
+solution[list]: contains a propose random solution</p>
 </dd>
-<dt>outputs:</dt><dd><p>matrix[array]: nxn array with distances among solution points</p>
+<dt>output:</dt><dd><p>best_neighbor[list]: contains the best neighbor of he current solution
+best_path[float]: distance cover by the best_neighbor route</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -71,15 +75,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../functions_autosummary.html"
-                        title="previous chapter">Functions</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="Opt_HC_CG.hill.calculate_distance.html"
-                        title="next chapter">Opt_HC_CG.hill.calculate_distance</a></p>
+                        title="previous chapter">Opt_HC_CG.hill.calculate_distance</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Opt_HC_CG.hill.best_solution.html"
+                        title="next chapter">Opt_HC_CG.hill.best_solution</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/Opt_HC_CG.hill.distance_matrix.rst.txt"
+      <li><a href="../_sources/_autosummary/Opt_HC_CG.hill.neighbors.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -104,14 +108,14 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
+          <a href="Opt_HC_CG.hill.best_solution.html" title="Opt_HC_CG.hill.best_solution"
              >next</a> |</li>
         <li class="right" >
-          <a href="../functions_autosummary.html" title="Functions"
+          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" >Functions</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.distance_matrix</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.neighbors</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

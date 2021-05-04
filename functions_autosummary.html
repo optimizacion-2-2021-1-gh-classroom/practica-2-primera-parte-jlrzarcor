@@ -56,11 +56,26 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.distance_matrix.html#Opt_HC_CG.hill.distance_matrix" title="Opt_HC_CG.hill.distance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.distance_matrix</span></code></a>(points)</p></td>
-<td><p>calculate the distance among each suggest solution points</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.distance_matrix.html#Opt_HC_CG.hill.distance_matrix" title="Opt_HC_CG.hill.distance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.distance_matrix</span></code></a>(coordinate)</p></td>
+<td><p>calculate the distance among each suggest solution point</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.best_solution.html#Opt_HC_CG.hill.best_solution" title="Opt_HC_CG.hill.best_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.best_solution</span></code></a>(points)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.calculate_distance.html#Opt_HC_CG.hill.calculate_distance" title="Opt_HC_CG.hill.calculate_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.calculate_distance</span></code></a>(matrix, solution)</p></td>
+<td><p>returns the distance associated with a solution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.neighbors.html#Opt_HC_CG.hill.neighbors" title="Opt_HC_CG.hill.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.neighbors</span></code></a>(matrix, solution)</p></td>
+<td><p>create neighbors of a propose solution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.hill.best_solution.html#Opt_HC_CG.hill.best_solution" title="Opt_HC_CG.hill.best_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hill.best_solution</span></code></a>(coordinate[, …])</p></td>
+<td><p>finds an optimal solution for the TSP problem using hill climbing algorithm</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.grad_conj.cgm.html#Opt_HC_CG.grad_conj.cgm" title="Opt_HC_CG.grad_conj.cgm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grad_conj.cgm</span></code></a>(A, b, x[, tolerance, iter])</p></td>
+<td><p>input:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.grad_conj.its_simetric.html#Opt_HC_CG.grad_conj.its_simetric" title="Opt_HC_CG.grad_conj.its_simetric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grad_conj.its_simetric</span></code></a>(matrix)</p></td>
+<td><p>ckecks if a matrix is symmetric inputs:     matrix: a cuadratic matix outputs:     True ir our matrix is simetric, false otherwise</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/Opt_HC_CG.grad_conj.is_pos_def.html#Opt_HC_CG.grad_conj.is_pos_def" title="Opt_HC_CG.grad_conj.is_pos_def"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grad_conj.is_pos_def</span></code></a>(x)</p></td>
+<td><p>ckecks if a matrix is define positive input:     param x: matrix to check if it  is define positive     return: True if the matix is define positive and False otherwise output:</p></td>
 </tr>
 </tbody>
 </table>

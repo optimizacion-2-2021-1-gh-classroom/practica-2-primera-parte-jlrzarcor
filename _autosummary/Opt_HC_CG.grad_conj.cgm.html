@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opt_HC_CG.hill.distance_matrix &#8212; &#34;Opt_HC_CG&#34; 0.1 documentation</title>
+    <title>Opt_HC_CG.grad_conj.cgm &#8212; &#34;Opt_HC_CG&#34; 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     
@@ -17,8 +17,8 @@
     <script src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Opt_HC_CG.hill.calculate_distance" href="Opt_HC_CG.hill.calculate_distance.html" />
-    <link rel="prev" title="Functions" href="../functions_autosummary.html" />
+    <link rel="next" title="Opt_HC_CG.grad_conj.its_simetric" href="Opt_HC_CG.grad_conj.its_simetric.html" />
+    <link rel="prev" title="Opt_HC_CG.hill.best_solution" href="Opt_HC_CG.hill.best_solution.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -31,14 +31,14 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
+          <a href="Opt_HC_CG.grad_conj.its_simetric.html" title="Opt_HC_CG.grad_conj.its_simetric"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../functions_autosummary.html" title="Functions"
+          <a href="Opt_HC_CG.hill.best_solution.html" title="Opt_HC_CG.hill.best_solution"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" accesskey="U">Functions</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.distance_matrix</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.grad_conj.cgm</a></li> 
       </ul>
     </div>  
 
@@ -47,16 +47,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="opt-hc-cg-hill-distance-matrix">
-<h1>Opt_HC_CG.hill.distance_matrix<a class="headerlink" href="#opt-hc-cg-hill-distance-matrix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="opt-hc-cg-grad-conj-cgm">
+<h1>Opt_HC_CG.grad_conj.cgm<a class="headerlink" href="#opt-hc-cg-grad-conj-cgm" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="Opt_HC_CG.hill.distance_matrix">
-<code class="sig-name descname">distance_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coordinate</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/hill.html#distance_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.hill.distance_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>calculate the distance among each suggest solution point</p>
+<dt id="Opt_HC_CG.grad_conj.cgm">
+<code class="sig-name descname">cgm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-07</span></em>, <em class="sig-param"><span class="n">iter</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/grad_conj.html#cgm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.grad_conj.cgm" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>input:</dt><dd><p>given a system of linear equation returns the
+coeficient matrix optimize</p>
+<blockquote>
+<div><p>A: Coeficient matrix
+b: solution vector
+x: vector to be optimize</p>
+</div></blockquote>
 <dl class="simple">
-<dt>input:</dt><dd><p>coordinate[array]: array containig the points to be visited</p>
+<dt>output:</dt><dd><p>x: optimiza vector</p>
 </dd>
-<dt>outputs:</dt><dd><p>matrix[array]: nxn array with distances among solution points</p>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -71,15 +78,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../functions_autosummary.html"
-                        title="previous chapter">Functions</a></p>
+  <p class="topless"><a href="Opt_HC_CG.hill.best_solution.html"
+                        title="previous chapter">Opt_HC_CG.hill.best_solution</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="Opt_HC_CG.hill.calculate_distance.html"
-                        title="next chapter">Opt_HC_CG.hill.calculate_distance</a></p>
+  <p class="topless"><a href="Opt_HC_CG.grad_conj.its_simetric.html"
+                        title="next chapter">Opt_HC_CG.grad_conj.its_simetric</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/Opt_HC_CG.hill.distance_matrix.rst.txt"
+      <li><a href="../_sources/_autosummary/Opt_HC_CG.grad_conj.cgm.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -104,14 +111,14 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.calculate_distance.html" title="Opt_HC_CG.hill.calculate_distance"
+          <a href="Opt_HC_CG.grad_conj.its_simetric.html" title="Opt_HC_CG.grad_conj.its_simetric"
              >next</a> |</li>
         <li class="right" >
-          <a href="../functions_autosummary.html" title="Functions"
+          <a href="Opt_HC_CG.hill.best_solution.html" title="Opt_HC_CG.hill.best_solution"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" >Functions</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.hill.distance_matrix</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Opt_HC_CG.grad_conj.cgm</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

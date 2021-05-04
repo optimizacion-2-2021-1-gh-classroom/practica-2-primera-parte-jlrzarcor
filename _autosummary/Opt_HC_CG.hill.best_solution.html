@@ -17,7 +17,8 @@
     <script src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Opt_HC_CG.hill.distance_matrix" href="Opt_HC_CG.hill.distance_matrix.html" />
+    <link rel="next" title="Opt_HC_CG.grad_conj.cgm" href="Opt_HC_CG.grad_conj.cgm.html" />
+    <link rel="prev" title="Opt_HC_CG.hill.neighbors" href="Opt_HC_CG.hill.neighbors.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -30,7 +31,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.distance_matrix.html" title="Opt_HC_CG.hill.distance_matrix"
+          <a href="Opt_HC_CG.grad_conj.cgm.html" title="Opt_HC_CG.grad_conj.cgm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Opt_HC_CG.hill.neighbors.html" title="Opt_HC_CG.hill.neighbors"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" accesskey="U">Functions</a> &#187;</li>
@@ -47,8 +51,21 @@
 <h1>Opt_HC_CG.hill.best_solution<a class="headerlink" href="#opt-hc-cg-hill-best-solution" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="Opt_HC_CG.hill.best_solution">
-<code class="sig-name descname">best_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/hill.html#best_solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.hill.best_solution" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">best_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coordinate</span></em>, <em class="sig-param"><span class="n">initial_point</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-07</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Opt_HC_CG/hill.html#best_solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Opt_HC_CG.hill.best_solution" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>finds an optimal solution for the TSP problem using hill climbing algorithm</dt><dd><dl class="simple">
+<dt>input:</dt><dd><p>points: coordinates of the places to be visited
+initial_point[integer]: number of the place to be visited first
+tolerance[float]: value that indicates the solution is not improving</p>
+</dd>
+<dt>outputs:</dt><dd><p>bst_distance[float]: distance of the best route
+best_sol[list]: order the places to be visted in the optimal solution
+time[float]: time that take the algorithm to obtain the solution</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 
@@ -60,8 +77,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="Opt_HC_CG.hill.distance_matrix.html"
-                        title="previous chapter">Opt_HC_CG.hill.distance_matrix</a></p>
+  <p class="topless"><a href="Opt_HC_CG.hill.neighbors.html"
+                        title="previous chapter">Opt_HC_CG.hill.neighbors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Opt_HC_CG.grad_conj.cgm.html"
+                        title="next chapter">Opt_HC_CG.grad_conj.cgm</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -90,7 +110,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Opt_HC_CG.hill.distance_matrix.html" title="Opt_HC_CG.hill.distance_matrix"
+          <a href="Opt_HC_CG.grad_conj.cgm.html" title="Opt_HC_CG.grad_conj.cgm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Opt_HC_CG.hill.neighbors.html" title="Opt_HC_CG.hill.neighbors"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">&#34;Opt_HC_CG&#34; 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../functions_autosummary.html" >Functions</a> &#187;</li>

@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.hill.calculate\_distance
+====================================
+
+.. currentmodule:: Opt_HC_CG.hill
+
+.. autofunction:: calculate_distance

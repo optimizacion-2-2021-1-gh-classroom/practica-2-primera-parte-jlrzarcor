@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.grad\_conj.its\_simetric
+====================================
+
+.. currentmodule:: Opt_HC_CG.grad_conj
+
+.. autofunction:: its_simetric

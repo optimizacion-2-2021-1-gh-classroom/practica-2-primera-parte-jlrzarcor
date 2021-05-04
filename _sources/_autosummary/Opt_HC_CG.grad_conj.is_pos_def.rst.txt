@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.grad\_conj.is\_pos\_def
+===================================
+
+.. currentmodule:: Opt_HC_CG.grad_conj
+
+.. autofunction:: is_pos_def

@@ -1,0 +1,6 @@
+﻿Opt\_HC\_CG.grad\_conj.cgm
+==========================
+
+.. currentmodule:: Opt_HC_CG.grad_conj
+
+.. autofunction:: cgm
