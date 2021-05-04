@@ -11,6 +11,9 @@ Hill Climbing and Conjugate Gradient module
    :toctree: _autosummary
 
    hill.distance_matrix
+   hill.random_salution
+   hill.calculate_distance
+   hill.neighbors
    hill.best_solution
    grad_conj.cgm
    grad_conj.its_simetric
