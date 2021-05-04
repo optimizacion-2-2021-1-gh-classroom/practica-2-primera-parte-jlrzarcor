@@ -2,10 +2,10 @@ import time
 import random
 import numpy as np
 
-#coordinate of the points/cities
 
 
-#adjacency matrix for a weighted graph based on the given coordinates
+
+
 def distance_matrix(coordinate):
     """
     calculate the distance among each suggest solution point
@@ -24,7 +24,7 @@ def distance_matrix(coordinate):
     #print(matrix)
     return matrix
 
-#finds a random solution    
+
 def random_solution(matrix, initial_point):
     """
     create a random solution with the places to be visited
@@ -45,7 +45,7 @@ def random_solution(matrix, initial_point):
     return solution
 
 
-#computes the path based on the random solution
+
 def calculate_distance(matrix, solution):
     """
     returns the distance associated with a solution
@@ -60,7 +60,7 @@ def calculate_distance(matrix, solution):
         distance += matrix[solution[i]][solution[i - 1]]
     return distance
 
-#generate neighbors of the random solution by swapping cities and returns the best neighbor
+
 def neighbors(matrix, solution):
     """
     create neighbors of a propose solution
@@ -79,11 +79,9 @@ def neighbors(matrix, solution):
             neighbor[j] = solution[i]
             neighbors.append(neighbor)
             
-    #assume that the first neighbor in the list is the best neighbor      
     best_neighbor = neighbors[0]
     best_path = calculate_distance(matrix, best_neighbor)
     
-    #check if there is a better neighbor
     for neighbor in neighbors:
         current_path = calculate_distance(matrix, neighbor)
         if current_path < best_path:
