@@ -1,0 +1,22 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+
+# folders to exclude
+# notebooks_2
+# conf/local/**
+
+
+# Compiled python modules.
+*.pyc
+# Python egg metadata, regenerated from source files by setuptools.
+
+/*.egg-info
+/*.egg
+.DS_Store
+src/Untitled.ipynb
